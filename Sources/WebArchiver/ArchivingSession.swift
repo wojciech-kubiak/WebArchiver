@@ -33,6 +33,7 @@ class ArchivingSession {
         
         var request = URLRequest(url: url)
         request.cachePolicy = cachePolicy
+        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36", forHTTPHeaderField: "User-Agent")
         urlSession.configuration.httpCookieStorage?.setCookies(cookies, for: url, mainDocumentURL: nil)
         
         let task = urlSession.dataTask(with: request) { (data, response, error) in
